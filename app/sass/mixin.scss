@@ -1,0 +1,95 @@
+@mixin button{
+    border: 0;
+    background-color: $basic-green;
+    font-family: Oswald, sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: $white;
+    padding: 8px;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover{
+        background-color: $basic-green-2;
+    }
+
+    &:active{
+        color: rgba($white, 0.3);
+        outline: none;
+    }
+
+    &:focus{
+        outline: none;
+    }
+}
+
+@mixin line-under-title{
+    position: relative;
+    display: inline-block;
+    background-color: $white;
+    padding-right: 20px;
+
+    @media screen and (min-width: $tab){
+        padding-right: 43px;
+        padding-left: 39px;
+        margin-left: -40px;
+    }
+
+    &:after{
+
+        @media screen and (min-width: $tab){
+            content: '';
+            position: absolute;
+            height: 2px;
+            background-color: $basic_green;
+            width: 100vw;        
+            top: 18px;
+            z-index: -1;
+            right: 0;
+        }
+    }
+
+    &:before{
+        content: '';
+        position: absolute;
+        height: 2px;
+        background-color: $basic_green;
+        width: 100vw;        
+        top: 16px;
+        z-index: -1;
+        left: 20px;
+
+        @media screen and (min-width: $tab){
+            top: 18px;
+        }
+    }
+}
+
+@mixin title{
+    font-size: 36px;
+    line-height: 40px;
+    font-weight: 400;
+    font-family: Oswald, sans-serif;
+    text-transform: none;
+    margin: 0;
+
+    @media screen and (min-width: $tab){
+        font-size: 60px;
+        line-height: 60px;
+    }
+}
+
+@mixin wrapper{
+    padding-left: 20px;
+    padding-right: 20px;
+    min-width: 320px;
+    max-width: 1280px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media screen and (min-width: $tab){
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}

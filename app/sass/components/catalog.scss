@@ -1,0 +1,84 @@
+.catalog{
+    margin: 404px 10px;
+    margin-bottom: 0;
+    background-color: #fff;
+    border-radius: 25px;
+    text-align: center;
+    font-family: MuseoCyrl, sans-serif;
+    position: relative;
+    z-index: 10;
+    height: 100vh;
+    max-width: 1300px;
+
+    @media screen and (min-width: $tab){
+        border-radius: 30px;
+    }
+
+    @media screen and (min-width: 1340px){
+        margin-left: auto;        
+        margin-right: auto;
+    }
+}
+
+.catalog__title{
+    margin: 0;
+    font-size: 22px;
+    line-height: 30px;
+    padding: 24px 32px;
+
+    @media screen and (min-width: $tab){
+        font-size: 28px;
+        line-height: 34px;
+        margin: 0 auto;
+        width: 55%;
+    }
+}
+
+.catalog__list{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    justify-content: space-around;
+    margin-top: 5px;
+    padding: 0 20px;
+
+    @media screen and (min-width: $tab){
+        padding: 0 110px;
+    }
+}
+
+.catalog__item{
+    width: 130px;
+    margin-bottom: 20px;
+
+    @media screen and (min-width: $tab){
+        width: 130px;
+    }
+}
+
+.item__link{
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    display: block;
+    color: $black;
+}
+
+.item__image{
+    width: 75px;
+    height: 75px;
+}
+
+.item__title{
+    display: block;
+    margin-top: 1px;
+
+    @media screen and (min-width: $tab){
+        margin-top: 10px;
+    }
+}

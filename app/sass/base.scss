@@ -1,0 +1,33 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.page-main{
+    margin: 0;
+    padding: 0;    
+}
+
+.no-scroll{
+    overflow: hidden;
+}
+
+/* svg path {
+    stroke:inherit;
+    stroke-width:inherit;
+    fill:inherit;
+    } */
+
+
+
+.visually-hidden {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+}
