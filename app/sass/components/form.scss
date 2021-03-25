@@ -7,6 +7,7 @@
     padding: 0 15px;
     padding-top: 80px;
     padding-right: 24px;
+    padding-bottom: 20px;
     overflow-y: scroll;
     scrollbar-color:#F08B98 #FAD8DD;
     display: block;
@@ -15,7 +16,8 @@
 
     @media screen and (min-width: $tab){
         margin: auto;
-        padding-top: 30px;
+        padding: 20px 30px;
+        border-radius: 15px;
     }
 }
 
@@ -30,9 +32,7 @@
         z-index: 1000;
         top: 0;
         left: 0;
-    }
-    
-
+    }   
 }
 
     
@@ -166,6 +166,7 @@
     display: block;
     border: 2px solid rgba(240, 139, 152, 0.3);
     flex-shrink: 0;
+    margin-right: 10px;
 }
 
 .span__label{
@@ -190,26 +191,28 @@
     line-height: 19px;
     font-weight: 500;
     margin: 0 auto;
-    margin-top: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
 }
 
 .open-flex{
     display: flex;
 }
 
-input:invalid:not(:placeholder-shown) ~ .input__validation {
+.label-valid .input__validation{
+    display: block;
+}
+
+.label-valid .input__message{
+    display: none;
+}
+
+.label-invalid .input__validation{
     display: block;
     background-image: url(../images/dest/error.svg);
 }
 
-input:invalid:not(:placeholder-shown) ~ .input__message{
+.label-invalid .input__message{
     display: block;
-}
-
-input:valid:not(:placeholder-shown) ~ .input__validation {
-    display: block;
-}
-
-input:valid:not(:placeholder-shown) ~ .input__message{
-    display: none;
 }

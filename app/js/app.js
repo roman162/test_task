@@ -10,6 +10,7 @@ const screenHeight = window.screen.height;
 const video = document.querySelector('.header__video');
 const title = document.querySelector('.header__content');
 const formContainer = document.querySelector('.form__container');
+const inputs = document.querySelectorAll('input[data-rule]');
 
 
 const containerClicked = function () {
@@ -47,6 +48,40 @@ const formOpen = function () {
     formClosed.addEventListener('click', formClose);
     formContainer.addEventListener('click', containerClicked);
     addEventListener('keydown', esc);
+}
+
+const validateForm = function (inputs) {
+    
+    for (let input of inputs) {
+        
+        input.addEventListener('blur', function () {
+            let rule = this.dataset.rule;
+            let value = this.value;
+            let check;
+
+            switch (rule) {
+                case 'phone':
+                    check = /([0-9]{1,3})(\([0-9]{2,3}\))-([0-9]{3})-([0-9]{2})-([0-9]{2})/.test(value);
+                    break;
+                case 'name':
+                    check = /^[А-Яа-яЁёa-zA-Z\s]+$/.test(value);
+                    break
+                case 'email':
+                     check = /([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})/.test(value);
+                    break                 
+            }
+
+            if (value.length < 1) { return };
+
+            if (check) {
+                this.parentElement.classList.remove('label-invalid');
+                this.parentElement.classList.add('label-valid');
+            } else {
+                this.parentElement.classList.remove('label-valid');
+                this.parentElement.classList.add('label-invalid');
+            }
+        })
+    }
 }
 
 const scrolled = function (item, opacityItem, percentOpacity) {
@@ -105,6 +140,8 @@ catalogScrolled();
 window.onresize = catalogScrolled;
 
 $("#phone").mask("+7(999)-999-99-99");
+
+validateForm(inputs);
 
 
 
