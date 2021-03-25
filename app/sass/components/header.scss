@@ -313,17 +313,18 @@
     @media screen and (min-width: $tab){
         display: block;
         width: auto;
-        height: 100vh;
         position: fixed;
         z-index: 1;
-        max-height: 950px;
         overflow: hidden;
+        min-height: 100vh;
+        min-width: 100vw;
     }
     
 }
 
 .video__item{
-    height: 100%;
+    min-height: 100vh;
+    min-width: 100%;
 }
 
 .video__mask{
